@@ -1,3 +1,5 @@
+import keyword
+
 print('hello')
 print("你好")
 
@@ -26,5 +28,4 @@ print("苹果%01d个，单价为%.02f,总价为%.02f" % (apple, price, money))
 '''
 
 # 查看所有关键字
-import keyword
 print(keyword.kwlist)
