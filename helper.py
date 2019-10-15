@@ -13,4 +13,4 @@ def print_line_times(n, char):
         print_line(char)
         i += 1
 
-print_line_times(3,"!")
+#print_line_times(3,"!")
