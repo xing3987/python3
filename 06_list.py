@@ -44,3 +44,16 @@ print(name_list)
 #遍历
 for name in name_list:
     print(name)
+
+import helper
+helper.print_line("*")
+
+#切片(同string规则)
+print(name_list[1:2])
+
+# 符号“+”会生成新的列表
+name_list + ["Tommy"]
+print(name_list)
+# extend会追加
+name_list.extend(["Jetty"])
+print(name_list)

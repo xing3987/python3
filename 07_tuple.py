@@ -22,3 +22,8 @@ for info in info_tuple:
 #取值和去索引
 print(info_tuple[0])
 print(info_tuple.index("小明"))
+
+import helper
+helper.print_line("*")
+#切片(同string规则)
+print(info_tuple[1:3])
