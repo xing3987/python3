@@ -1,7 +1,7 @@
 #! /usr/bin/python3
 
 # 使用“#! python3路径在linux中再赋予可执行-x权限，则该文件可以在Linux中直接执行”
-import _10_card_admin_tool
+from 基础 import _10_card_admin_tool
 import helper
 
 # 设计一个名片管理系统
