@@ -27,7 +27,7 @@ class Soldier:
         self.gun = None
 
     def fire(self):
-        # 判断是否有枪
+        # 判断是否有枪,None使用is判断
         if self.gun is None:
             print("给把枪吧..")
             return
@@ -42,5 +42,5 @@ ak47 = Gun("ak47")
 xiaoming = Soldier("xiaoming")
 # 设置属性为新的对象
 xiaoming.gun = ak47
-#xiaoming.gun.add_bullet(100)
+# xiaoming.gun.add_bullet(100)
 xiaoming.fire()
