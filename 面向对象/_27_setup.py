@@ -19,4 +19,11 @@ python3 setup.py build
 
 3 生成发布压缩包
 python3 setup.py sdist
+
+
+4 其他人拿到文件，安装到pyhon中
+sudo python3 setup.py install
+
+5.使用
+import package.module
 """
