@@ -1,5 +1,5 @@
 # 名片管理系统工具类
-import helper
+from helper import _helper
 
 card_list = []
 
@@ -28,7 +28,7 @@ def show_all():
         for key in ("姓名", "电话", "QQ"):
             print(key, end="\t\t")
         print()
-        helper.print_line("-")
+        _helper.print_line("-")
     else:
         print("名片夹中没有数据，请创建。")
         return

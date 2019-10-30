@@ -1,4 +1,5 @@
-import helper
+from helper import _helper as helper
+
 
 def say_hello():
     """打招呼"""
@@ -6,4 +7,4 @@ def say_hello():
 
 
 say_hello()
-helper.print_line_times(2,"-")
+helper.print_line_times(2, "-")

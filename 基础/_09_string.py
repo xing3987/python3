@@ -40,9 +40,9 @@ print(hello_str.find("lloo"))
 print(hello_str.replace("yellow", "python"))
 print(hello_str)
 
-import helper
+from helper import _helper
 
-helper.print_line("*")
+_helper.print_line("*")
 
 # 文本对齐
 poem = ["登鹳雀楼",

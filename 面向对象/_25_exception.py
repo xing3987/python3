@@ -33,8 +33,8 @@ def raise_exception():
         ex = Exception("密码长度小于8位数")
         raise ex
 
-
-try:
-    print(raise_exception())
-except Exception as result:
-    print("出现异常:%s." % result)
+if __name__=="__main__":
+    try:
+        print(raise_exception())
+    except Exception as result:
+        print("出现异常:%s." % result)

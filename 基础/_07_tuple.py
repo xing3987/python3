@@ -23,7 +23,8 @@ for info in info_tuple:
 print(info_tuple[0])
 print(info_tuple.index("小明"))
 
-import helper
-helper.print_line("*")
+from helper import _helper
+
+_helper.print_line("*")
 #切片(同string规则)
 print(info_tuple[1:3])

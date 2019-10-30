@@ -1,3 +1,4 @@
+from helper import _helper
 """
 a.增加
 insert(索引，数据) ：在指定位置插入数据
@@ -45,8 +46,8 @@ print(name_list)
 for name in name_list:
     print(name)
 
-import helper
-helper.print_line("*")
+
+_helper.print_line("*")
 
 #切片(同string规则)
 print(name_list[1:2])

@@ -1,4 +1,4 @@
-import helper
+from helper import _helper
 
 # 面向对象
 # 使用dir()内置函数，查看对象方法(含内置方法)
@@ -6,7 +6,7 @@ import helper
 gl_list = [1, 2, 3, 4]
 print(dir(gl_list))
 
-helper.print_line("*")
+_helper.print_line("*")
 """
 创建对象时，先分配空间（有了内存地址），然后会自动调用类的内置__init__方法，初始化（可以重写）
 """
@@ -42,7 +42,7 @@ print(tom.name)
 kitty = Cat()
 print(kitty.age)
 
-helper.print_line("*")
+_helper.print_line("*")
 
 
 # 初始化并赋值
@@ -65,5 +65,5 @@ wan = Dog("a hua")
 print(wan.name)
 print(wan)
 del wan
-helper.print_line("*")
+_helper.print_line("*")
 

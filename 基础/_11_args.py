@@ -1,4 +1,4 @@
-import helper
+from helper import _helper
 
 # 使用id()查看内存地址
 a = 1
@@ -49,19 +49,19 @@ def test_args(num, *nums, **person):
     print(person)
 
 
-helper.print_line("*")
+_helper.print_line("*")
 test_args(1)
-helper.print_line("*")
+_helper.print_line("*")
 test_args(1, 2, 3, 4)
-helper.print_line("*")
+_helper.print_line("*")
 test_args(1, 2, 3, 4, name="tom", gender="F")
-helper.print_line("*")
+_helper.print_line("*")
 
 gl_tuple = [1, 2, 3]
 gl_dir = {"name": "tom", "gender": "F"}
 
 #直接传递元组或字典，得不到预期结果，需要拆包，前面加*（元组），**（字典）
 test_args(1, gl_tuple, gl_dir)
-helper.print_line("*")
+_helper.print_line("*")
 test_args(1, *gl_tuple, **gl_dir)
 
