@@ -5,8 +5,8 @@ pygame.init()
 screen = pygame.display.set_mode((400, 700))
 
 # 加载背景图片
-bg = pygame.image.load("images/background.png")
-me1 = pygame.image.load("images/me1.png")
+bg = pygame.image.load("../images/background.png")
+me1 = pygame.image.load("../images/me1.png")
 
 # blit绘制背景
 screen.blit(bg, (0, 0))
