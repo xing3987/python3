@@ -3,7 +3,7 @@ import pygame
 
 class GameSprite(pygame.sprite.Sprite):
     """
-    飞机大战游戏精灵
+    飞机大战游戏精灵,精灵类要提供初始化的方法和update方法
     """
 
     def __init__(self, image_name, speed=1):
