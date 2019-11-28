@@ -1,8 +1,11 @@
+import random
 import pygame
 
 # 定义常量
 SCREEN_RECT = pygame.Rect(0, 0, 400, 700)
 CLOCK_TICK = 60
+# 定义敌机定时器常量(事件type)
+CREATE_ENEMY_EVENT = pygame.USEREVENT
 
 
 class GameSprite(pygame.sprite.Sprite):
@@ -39,3 +42,29 @@ class Background(GameSprite):
         # 2.判断是否移出屏幕，如果移出屏幕，将图像设置到屏幕上方
         if self.rect.y >= SCREEN_RECT.height:
             self.rect.y = -self.rect.height
+
+
+class Enemy(GameSprite):
+    """敌机精灵"""
+
+    def __init__(self):
+        # 1.调用父类方法，创建敌机精灵，同时指定敌机图片
+        super().__init__("./images/enemy1.png")
+        # 2.指定敌机的初始随机速度1-3
+        self.speed = random.randint(1, 3)
+        # 3.指定敌机的初始随机位置
+        self.rect.bottom = 0
+        max_x = SCREEN_RECT.width - self.rect.width
+        self.rect.x = random.randint(0, max_x)
+
+    def update(self):
+        # 1.调用父类的方法，保存垂直方向的飞行
+        super().update()
+        # 2.判断是否飞出屏幕，如果是，需要从精灵组删除敌机
+        if self.rect.y >= SCREEN_RECT.height:
+            print("飞出屏幕，需要从精灵组删除。")
+            self.kill()
+        pass
+
+    def __del__(self):
+        print("销毁了敌机。%s" % self.rect)
