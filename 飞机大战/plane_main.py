@@ -15,6 +15,7 @@ class PlaneGame(object):
         self.__create_sprites()
         # 4 设置定时器事件
         pygame.time.set_timer(CREATE_ENEMY_EVENT, 1000)
+        pygame.time.set_timer(HERO_FIRE_EVENT, 700)
 
     def __create_sprites(self):
         """创建精灵和精灵组"""
@@ -78,6 +79,9 @@ class PlaneGame(object):
                 self.hero.speed = -2
             else:
                 self.hero.speed = 0
+            # 定义调用发射字弹的事件
+            if event.type == HERO_FIRE_EVENT:
+                self.hero.fire()
 
     def __check_collide(self):
         pass
@@ -92,6 +96,9 @@ class PlaneGame(object):
         # 3.更新英雄精灵组并绘制到屏幕
         self.hero_group.update()
         self.hero_group.draw(self.screen)
+        # 4.更新子弹精灵组并绘制到屏幕
+        self.hero.bullet_group.update()
+        self.hero.bullet_group.draw(self.screen)
 
     @staticmethod
     def __game_over():
