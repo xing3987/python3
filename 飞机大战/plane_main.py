@@ -28,9 +28,13 @@ class PlaneGame(object):
         bg2 = Background(True)
         self.back_group = pygame.sprite.Group(bg1, bg2)
 
-        # 创建敌机的精灵组
+        # 2.创建敌机的精灵组
         self.enemy_group = pygame.sprite.Group()
-        pass
+
+        # 3.创建英雄的精灵组
+        # 将英雄精灵添加到英雄的精灵组
+        self.hero = Hero()
+        self.hero_group = pygame.sprite.Group(self.hero)
 
     def start_game(self):
         print("游戏开始")
@@ -59,6 +63,21 @@ class PlaneGame(object):
                 enemy = Enemy()
                 # 将敌机精灵添加到敌机的精灵组
                 self.enemy_group.add(enemy)
+            '''  
+            第一种方式，使用事件监听的方式，获取按键，但是不能获取连续按键，只能一个一个获取 
+            elif event.type==pygame.KEYDOWN and event.key==pygame.K_RIGHT:
+                print("向右移动。")
+            '''
+            # 使用键盘提供的方法获取键盘按键，一直按住可以一直连续获取
+            key_pressed = pygame.key.get_pressed()
+            if key_pressed[pygame.K_RIGHT]:
+                # print("向右移动。")
+                self.hero.speed = 2
+            elif key_pressed[pygame.K_LEFT]:
+                # print("向左移动。")
+                self.hero.speed = -2
+            else:
+                self.hero.speed = 0
 
     def __check_collide(self):
         pass
@@ -70,6 +89,9 @@ class PlaneGame(object):
         # 2.更新敌机精灵组并绘制到屏幕
         self.enemy_group.update()
         self.enemy_group.draw(self.screen)
+        # 3.更新英雄精灵组并绘制到屏幕
+        self.hero_group.update()
+        self.hero_group.draw(self.screen)
 
     @staticmethod
     def __game_over():

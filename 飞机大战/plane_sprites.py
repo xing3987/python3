@@ -64,7 +64,20 @@ class Enemy(GameSprite):
         if self.rect.y >= SCREEN_RECT.height:
             print("飞出屏幕，需要从精灵组删除。")
             self.kill()
-        pass
 
     def __del__(self):
         print("销毁了敌机。%s" % self.rect)
+
+
+class Hero(GameSprite):
+    """英雄精灵"""
+
+    def __init__(self):
+        super().__init__("./images/me1.png", 0)
+        # 设置英雄初始化位置(x中心为屏幕的中心，y为屏幕底部向上100像素)
+        self.rect.centerx = SCREEN_RECT.centerx
+        self.rect.bottom = SCREEN_RECT.bottom - 100
+
+    # 重写update方法使英雄移动
+    def update(self):
+        self.rect.x += self.speed
