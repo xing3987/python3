@@ -83,8 +83,23 @@ class PlaneGame(object):
             if event.type == HERO_FIRE_EVENT:
                 self.hero.fire()
 
+    # 碰撞检测
     def __check_collide(self):
-        pass
+        # 1.子弹摧毁敌机groupcollide(第一个参数为对象1，第二个参数为对象2，
+        # 第三个参数为对象1是否销毁，第四个参数为对象2是否销毁,返回值为碰撞的所有对象)
+        pygame.sprite.groupcollide(self.hero.bullet_group, self.enemy_group, True, True)
+
+        # 2.敌机摧毁英雄（判断是否碰撞，如果碰撞游戏结束）
+        """
+        #第一种方法，使用组碰撞的方法
+        list = pygame.sprite.groupcollide(self.hero_group, self.enemy_group, True, True)
+        if list:
+            self.__game_over()
+        """
+        # 第二种方法，使用精灵和精灵组碰撞的方法
+        enemies = pygame.sprite.spritecollide(self.hero, self.enemy_group, True)
+        if enemies:
+            self.__game_over()
 
     def __update_sprites(self):
         # 1.更新背景精灵组并绘制到屏幕
