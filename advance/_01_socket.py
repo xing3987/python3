@@ -9,7 +9,7 @@ def main():
     #   发送内容有两种b"string","string".encode("utf-8")
     while True:
         datas = input("请输入要发送的数据：")
-        udp_socket.sendto(datas.encode("utf-8"), ("localhost", 8080))
+        udp_socket.sendto(datas.encode("utf-8"), ("localhost", 9999))
 
     # 3.关闭套接字
     udp_socket.close()
