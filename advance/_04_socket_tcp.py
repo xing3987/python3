@@ -26,7 +26,7 @@ def main():
     tcp_server_socket = socket()
     # 2.绑定本地信息
     tcp_server_socket.bind(("", 9988))
-    # 3.改变模式为监听模式
+    # 3.改变模式为监听模式(设定同一时间可以有多个客户端连接)
     tcp_server_socket.listen(128)
     while True:
         # 4.等待连接,返回类型是个元组
