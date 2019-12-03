@@ -1,6 +1,7 @@
 import socket
 
 
+# udp客户端
 def main():
     # 1.创建一个udp套接字
     udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
