@@ -3,7 +3,6 @@
 """
 import os
 import random
-# 创建一个进程池，其中进程的最大数量为3
 import time
 from multiprocessing import Pool
 
@@ -18,6 +17,7 @@ def worker(msg):
 
 
 def main():
+    # 创建一个进程池，其中进程的最大数量为3
     po = Pool(3)
     print("----start----")
     for i in range(0, 10):
