@@ -24,6 +24,8 @@ def main():
 
     nums = fibonacci(10)
     # 使用生成器
+    print(next(nums))  # 可以直接使用next获取生成器的下一个对象
+    print(next(nums))
     for i in nums:
         print("%d \t" % i, end="")
 
