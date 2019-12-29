@@ -9,6 +9,7 @@ from matplotlib import pyplot as plt
 
 
 def main():
+    # 绘制x,y的点位坐标信息
     y = [random.randint(20, 35) for i in range(120)]  # 每分钟气温
     x = range(0, 120)  # 时间
     # 设置图片大小
